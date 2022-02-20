@@ -1,0 +1,74 @@
+.services{
+  background-color: deepskyblue;
+  height: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.services__card{
+  width: 15em;
+  color: white;
+  height: 12.5em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid #eceff4;
+  margin: 1.5rem;
+  padding: 1rem 0.5rem 0;
+  transition: 1s;
+  text-align: center;
+}
+
+.services__card:hover{
+  background-color: white;
+  border: 2px solid white;
+  color: deepskyblue;
+  transition: 1s;
+  svg{
+    color: deepskyblue;
+    transition: 1s;
+  }
+  .services__cara{
+    background-color: deepskyblue;
+    transition: 1s;
+  }
+  .services__label{
+    color: deepskyblue;
+    transition: 1s;
+  }
+}
+
+svg{
+  color: white;
+  display: flex;
+  width: 55px;
+  height: auto;
+  margin: 5px;
+  transition: 1s;
+}
+
+.services__container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.services__cara{
+  min-height: 2px;
+  width: 85%;
+  background-color: white;
+  transition: 1s;
+}
+
+.services__label{
+  margin: 15px;
+  color: white;
+  font-size: 18px;
+  transition: 1s;
+}
+
+.services__name{
+  margin: 3px 3px 5px 3px;
+  font-size: 19px;
+  font-weight: bold;
+}

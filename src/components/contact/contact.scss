@@ -1,0 +1,23 @@
+.contact{
+  height: 100vh;
+  background-color: yellow;
+}
+
+.contact__container{
+  display: -moz-inline-block;
+}
+
+.contact__form{
+  display: flex;
+  flex-direction: column;
+}
+
+.contact__label{
+  font-size: 20px;
+}
+
+.contact__input{
+  height: 20px;
+  color: rebeccapurple;
+  width: 200px;
+}
