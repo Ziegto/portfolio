@@ -1,23 +1,129 @@
-.contact{
-  height: 100vh;
-  background-color: yellow;
+.contact {
+  margin-top: 150px;
+  height: 100%;
+  //background-color: yellow;
 }
 
-.contact__container{
-  display: -moz-inline-block;
+.contact__nadpis {
+  text-align: center;
+  color: white;
+  margin: auto;
+  font-size: 45px;
 }
 
-.contact__form{
+.contact__container {
+  margin: 20px;
+}
+
+.contact__form {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
-.contact__label{
-  font-size: 20px;
-}
-
-.contact__input{
-  height: 20px;
+.contact__input {
+  display: flex;
+  font-size: 25px;
+  height: 32px;
   color: rebeccapurple;
+  margin: auto auto 15px;
+  width: 350px;
+}
+
+.contact__textarea {
+  width: 350px;
+  font-size: 23px;
+  display: flex;
+  height: 250px;
+  margin: auto auto 15px;
+}
+
+.contact__button {
   width: 200px;
+  height: 30px;
+  margin: auto;
+  font-size: 22px;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.popup__open {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  margin: 15px;
+  background: grey;
+  height: auto;
+  animation-name: fade-in;
+  animation-duration: 3s;
+  animation-fill-mode: both;
+}
+
+@keyframes fade-out {
+  100% {
+    opacity: 0;
+  }
+  0% {
+    opacity: 1;
+  }
+}
+
+.popup__close {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  margin: 15px;
+  background: gray;
+  height: auto;
+  animation-name: fade-out;
+  animation-duration: 3s;
+  animation-fill-mode: both;
+}
+
+.popup__text {
+  font-size: 30px;
+  margin: 10px;
+}
+
+::-webkit-scrollbar {
+  width: 1px;
+}
+
+@media (max-width: 460px) {
+  .contact__input {
+    font-size: 15px;
+    height: 25px;
+    color: rebeccapurple;
+    display: flex;
+    margin: auto auto 15px;
+    width: 215px;
+  }
+
+  .contact__textarea {
+    width: 215px;
+    font-size: 15px;
+    display: flex;
+    height: 250px;
+    margin: auto auto 15px;
+  }
+
+  .contact__button {
+    width: 120px;
+    height: 30px;
+    margin: auto;
+    font-size: 15px;
+  }
+  .contact__nadpis {
+    text-align: center;
+    color: white;
+    margin: auto;
+    font-size: 35px;
+  }
 }

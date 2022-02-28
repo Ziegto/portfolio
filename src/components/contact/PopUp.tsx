@@ -1,18 +1,15 @@
 import React from 'react';
-import '../about/about.scss';
+import '../contact/contact.scss';
 
 interface Props {
-    onClick: () => void,
-    text:string
+    text: any,
+    classn?:any
 }
 
-const PopUp:React.FC<Props> = ({onClick, text}) => {
+const PopUp: React.FC<Props> = ({text, classn}) => {
     return (
-        <div className='popup'>
-            <div className='popup_open'>
-                <h1>{text}</h1>
-                <button onClick={onClick}>X</button>
-            </div>
+            <div className={classn}>
+                <p className="popup__text">{text}</p>
         </div>
     );
 }

@@ -2,64 +2,41 @@ import React, {useState} from 'react';
 import './contact.scss'
 import emailjs from '@emailjs/browser';
 import PopUp from "./PopUp";
-import set = Reflect.set;
 
 const Contact = () => {
-    let [status, setStatus] = useState(false);
-    const [pop, setPop] = useState(false);
-    /*const [show, setShow] = useState(false);
-
-    const toggleClick = () => {
-        setPop(!pop)
-        setShow(!show)
-    }
-
-    function ShowPopup() {
-        return (
-            show ? <PopUp onClick={toggleClick} text="Je to ok"/> :<PopUp onClick={toggleClick} text="Není to ok"/>
-        );
-    }*/
+    const [status, setStatus] = useState('a');
+    const [text, setText] = useState('');
 
     const sendEmail = (e: any) => {
         e.preventDefault();
         emailjs.sendForm('service_i50qq2x', 'template_8rjr0nn', e.target
             , 'user_LyLSi9Trqil1bzm13xMi8')
             .then(() => {
-                setPop(true);
-                setStatus(true);
+                setStatus('success')
+                setText("Úspěšně odesláno.")
+                setTimeout(() => setStatus(''), 3000)
+                e.target.reset()
             }, (error) => {
-                setStatus(false);
-                setPop(true);
+                setStatus('error')
+                setText("Něco se pokazilo. Zkuste to prosím později.")
+                setTimeout(() => setStatus(''), 3000)
             });
     };
 
     return (
         <div className="contact">
+            <h1 className="contact__nadpis">Kontaktní formulář</h1>
             <div className="contact__container">
                 <form onSubmit={sendEmail} className="contact__form">
-                    <label className="contact__label">Name *</label>
-                    <input className="contact__input" type="text" name="name" required/>
-
-                    <label className="contact__label">Email *</label>
-                    <input className="contact__input" type="email" name="email" required/>
-
-                    <label className="contact__label">Telefon</label>
-                    <input className="contact__input" type="text" name="phone"/>
-
-                    <label className="contact__label">Message *</label>
-                    <textarea className="contact__input" name="message" required/>
-
-                    <button type="submit" value="Send">Clickni</button>
+                    <input className={"contact__input"} type="text" name="name" required placeholder="Jméno"/>
+                    <input className="contact__input" type="email" name="email" required placeholder="Email"/>
+                    <input className="contact__input" type="text" name="phone" placeholder="Telefon"/>
+                    <textarea className="contact__textarea" name="message" required placeholder="Zpráva"/>
+                    <button className="contact__button" type="submit" value="Send">ODESLAT</button>
                 </form>
-                {pop
-                    ?
-                    status ?
-                        <p>"ANO"</p>
-                        :
-                        <p>"NE"</p>
-                    :
-                    null
-                }
+                {status === 'success' && <PopUp classn={'popup__open'} text={text}/>}
+                {status === 'error' && <PopUp classn={'popup__open'} text={text}/>}
+                {status === '' && <PopUp text={text} classn={'popup__close'}/>}
             </div>
         </div>
     )

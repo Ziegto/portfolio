@@ -1,0 +1,23 @@
+.social__container{
+  margin-top: 60px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.social__icon{
+  margin: 15px;
+}
+
+svg{
+  width: 40px;
+}
+
+@media (max-width: 460px) {
+  svg{
+    width: 30px;
+  }
+  .social__icon{
+    margin: 10px;
+  }
+}

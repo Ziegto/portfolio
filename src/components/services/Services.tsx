@@ -21,6 +21,7 @@ const cards = [
 
 const Services = () => (
     <div className="services">
+        <h1 className="services__nadpis">Mé služby</h1>
         <div className="services__container">
             {cards.map((item, index) =>
                 <div className="services__card" key={index}>
